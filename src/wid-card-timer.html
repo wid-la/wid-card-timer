@@ -1,0 +1,74 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="import" href="../iron-flex-layout/classes/iron-flex-layout.html">
+<link rel="import" href="../paper-material/paper-material.html">
+<link rel="import" href="../paper-styles/paper-styles-classes.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+
+<link rel="import" href="../wid-card-standard-behavior/wid-card-standard-behavior.html">
+<link rel="import" href="../wid-card-weight-behavior/wid-card-weight-behavior.html">
+<link rel="import" href="../wid-versatile-websocket/wid-versatile-websocket.html">
+<link rel="import" href="../wid-card-subscriptions-behavior/wid-card-subscriptions-behavior.html">
+
+
+<!--
+An element providing a solution to no problem in particular.
+
+Example:
+
+    <wid-card-timer></wid-card-timer>
+
+@group Seed Elements
+@element wid-card-timer
+@demo demo/index.html
+@hero hero.svg
+-->
+<dom-module id="wid-card-timer">
+
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+      }
+ 
+      paper-material {
+        overflow-y: auto;
+        height: 100%;
+      }
+ 
+    </style>
+
+    <div id="websockets">
+      <!-- This is a requirement of `wid-card-subscriptions-behavior` -->
+      <!-- one websocket element for each subscribed channel -->
+      <template is="dom-repeat" items="[[websockets]]" as="ws">
+        <wid-versatile-websocket url="[[ws.url]]" token="[[ws.token]]" subscription="[[ws.subscription]]" on-data="_onData">
+        </wid-versatile-websocket>
+      </template>
+    </div>    
+
+    <paper-material class="layout vertical flex" elevation="3">
+    </paper-material>
+    
+  </template>
+
+</dom-module>
+
+<script>
+
+  (function () {
+
+    Polymer({
+
+      is: 'wid-card-timer',
+
+      properties: {
+
+      }
+
+    });
+
+  })();
+
+</script>

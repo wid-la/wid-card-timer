@@ -1,0 +1,35 @@
+{
+  "name": "wid-card-timer",
+  "version": "0.0.0",
+  "authors": [
+    "Aurelien Chaudagne <ouralien@gmail.com>"
+  ],
+  "description": "An element providing a solution to no problem in particular.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "seed"
+  ],
+  "main": "wid-card-timer.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/<USERNAME>/seed-element/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#~1.0.3",
+    "wid-card-standard-behavior": "wid-la/wid-card-standard-behavior#~1.0.0",
+    "wid-card-weight-behavior": "wid-la/wid-card-weight-behavior#~1.0.0",
+    "wid-versatile-websocket": "wid-la/wid-versatile-websocket#~1.0.0",
+    "wid-card-subscriptions-behavior": "wid-la/wid-card-subscriptions-behavior#~1.0.0",
+    "iron-icon": "PolymerElements/iron-icon#~1.0.5"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#~1.0.1",
+    "test-fixture": "PolymerElements/test-fixture#~1.0.0"
+  }
+}
