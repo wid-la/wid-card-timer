@@ -35,6 +35,21 @@ Example:
       paper-material {
         overflow-y: auto;
         height: 100%;
+        background-color: #fff;
+      }
+
+      #header {
+        background-color: #4caf50;
+        font-weight: bold;
+        font-size: 1.5vw;
+        color: white;
+      }
+      #timer {
+        background-color: #eaeaea;
+        font-size: 3vw;
+      }
+      #footer {
+        font-size: 1.5vw;
       }
  
     </style>
@@ -49,10 +64,13 @@ Example:
     </div>    
 
     <paper-material class="layout vertical flex" elevation="3">
+      <div id="header" class="flex layout horizontal center-center">[[title]]</div>
+      <div id="timer" class="flex-2 layout horizontal center-center">[[_timeValue(value)]]</div>
+      <div id="footer" class="flex layout horizontal center-center">[[description]]</div>
     </paper-material>
     
   </template>
-
+  
 </dom-module>
 
 <script>
@@ -63,8 +81,39 @@ Example:
 
       is: 'wid-card-timer',
 
-      properties: {
+      behaviors: [Polymer.WidCardStandardBehavior, Polymer.WidCardWeightBehavior, Polymer.WidCardSubscriptionsBehavior],
 
+      properties: {
+        /**
+         * title
+         * @type {String}
+         */
+        title: {
+          type: String,
+          value: 'Title'
+        },
+
+        /**
+         * value
+         * @type {String}
+         */
+        value: {
+          type: String,
+          value: 30
+        },
+
+        /**
+         * description
+         * @type {String}
+         */
+        description: {
+          type: String,
+          value: 'description'
+        }
+      },
+
+      _timeValue: function _timeValue(value) {
+        return value + ' h';
       }
 
     });
