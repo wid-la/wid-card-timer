@@ -7,6 +7,7 @@
 
 <link rel="import" href="../wid-card-standard-behavior/wid-card-standard-behavior.html">
 <link rel="import" href="../wid-card-weight-behavior/wid-card-weight-behavior.html">
+<link rel="import" href="../wid-card-theme-behavior/wid-card-theme-behavior.html">
 <link rel="import" href="../wid-versatile-websocket/wid-versatile-websocket.html">
 <link rel="import" href="../wid-card-subscriptions-behavior/wid-card-subscriptions-behavior.html">
 
@@ -36,6 +37,7 @@ Example:
         overflow-y: auto;
         height: 100%;
         background-color: #fff;
+        overflow: visible;
       }
 
       #header {
@@ -51,6 +53,20 @@ Example:
       #footer {
         font-size: 1.5vw;
       }
+
+      .wrapping_paper {
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+
+      .ribbon {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 50%;
+      }
  
     </style>
 
@@ -63,7 +79,7 @@ Example:
       </template>
     </div>    
 
-    <paper-material class="layout vertical flex" elevation="3">
+    <paper-material id="mainContent" class="layout vertical flex" elevation="3">
       <div id="header" class="flex layout horizontal center-center">[[title]]</div>
       <div id="timer" class="flex-2 layout horizontal center-center">[[_timeValue(value)]]</div>
       <div id="footer" class="flex layout horizontal center-center">[[description]]</div>
