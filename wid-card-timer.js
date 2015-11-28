@@ -70,7 +70,6 @@
     },
 
     _themeChangedCard: function _themeChangedCard(themeName) {
-      console.log('Time Theme : ', themeName, ' Tag : ', this.themeTag);
       if (themeName === 'xmass' && this.themeTag === 'gift') {
         var wrappingImg = document.createElement('img');
         wrappingImg.src = '/images/themes/xmass/wrapping_paper.png';
